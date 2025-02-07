@@ -1,3 +1,8 @@
+// Add at the top of config.php
+header("Content-Security-Policy: default-src 'self'");
+header("X-Content-Type-Options: nosniff");
+header("X-Frame-Options: DENY");
+13. Error Handling (404.php)
 <?php
 $servername = "localhost";
 $username = "root";
