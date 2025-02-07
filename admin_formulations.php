@@ -6,6 +6,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- In admin_formulations.php -->
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><i class="fas fa-pills me-2"></i>Manage Formulations</h2>
+        <div>
+            <a href="admin_drugs.php" class="btn btn-outline-primary me-2">
+                <i class="fas fa-capsules"></i> Manage Drugs
+            </a>
+            <a href="admin_brands.php" class="btn btn-outline-primary">
+                <i class="fas fa-tags"></i> Manage Brands
+            </a>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow">
+        <div class="card-body">
+            <!-- Existing form and table with added responsive classes -->
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <!-- Table content -->
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="container mt-5">
         <h2>Manage Formulations</h2>
         <form method="post" action="save_formulation.php">
