@@ -79,7 +79,21 @@ $(document).ready(function() {
                 result += `<p>${tablets.toFixed(1)} tablet${tablets !== 1 ? 's' : ''}</p>`;
                 break;
         }
+  // Age validation
+    const age = parseInt($('#age').val());
+    if (formulation.age_min && age < formulation.age_min) {
+        result += `<div class="alert alert-warning">Warning: Patient age below recommended minimum (${formulation.age_min} months)</div>`;
+    }
+    if (formulation.age_max && age > formulation.age_max) {
+        result += `<div class="alert alert-warning">Warning: Patient age above recommended maximum (${formulation.age_max} months)</div>`;
+    }
 
+    // Daily dose limit check
+    if (formulation.dosage_per_kg_max) {
+        const maxDose = weight * formulation.dosage_per_kg_max;
+        result += `<p class="text-danger">Max Daily Dose: ${maxDose.toFixed(1)} mg</p>`;
+    }
+        
         $('#calculationResult').html(result);
     }
 });
